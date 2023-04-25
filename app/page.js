@@ -31,21 +31,27 @@ export default function Home() {
         <p className="text-8xl">stradis</p>
       </div>
       <div className="flex flex-col items-center">
-        <p className="text-xl">Query your users&apos; favorite streamed music with one API.</p>
+        <p className="text-xl">Seamlessly integrate ticket platforms like Ticketmaster, StubHub, and SeatGeek with one unified API.</p>
       </div>
       <div className="flex flex-col items-center">
         <p className="text-2xl pb-4"><i>Why</i> use <b>stradis</b>?</p>
-        <p className="text-md">Enhance your product&apos;s UX by accounting for their music tastes.</p>
-        <p className="text-md">Promoting concerts? With one API call, see what a user is listening to for tailored marketing.</p>
-        <p className="text-md">Spotify, Apple Music, YouTube Music, Amazon Music, Pandora, Deezer. It doesn&apos;t matter.</p>
-        <p className="text-md">Suggest artists, albums, and songs. Add them to a playlist wihout the user ever leaving.</p>
+        <p className="text-2xl">One API. Any service.</p>
+        <p className="text-md">Give your venue's website or app the power of ticket sales and distribution without the development costs.</p>
+        <p className="text-md">Enable your users to buy tickets directly from your site through a connected trusted ticket platform.</p>
+        <p className="text-md">List your upcoming events from any platform directly on your site.</p>
         <p className="text-md">Pay-as-you-go pricing. Only pay for what you need.</p>
       </div>
       <div className="flex flex-col items-center">
-        <p className="text-4xl pb-4"><b>Spread the love of music.</b></p>
+        <p className="text-2xl pb-4">Allow users to connect their streaming music accounts.</p>
+        <p className="text-md">See what your users are listening to for better tailored marketing.</p>
+        <p className="text-md">Share curated playlists of upcoming artists to users directly from your site.</p>
+        <p className="text-md">Create unique music events your community would love.</p>
+      </div>
+      <div className="flex flex-col items-center">
+        <p className="text-4xl pb-4"><b>Spread the love of music with <i>stradis</i>.</b></p>
       </div>
       <Divider />
-      <div className="flex items-center space-x-2">
+      {/* <div className="flex items-center space-x-2">
         <p className="text-2xl self-center">Request a Demo</p>
         <form onSubmit={handleSubmit} id="demo">
           <FormControl>
@@ -95,7 +101,7 @@ export default function Home() {
             )}
           </FormControl>
         </form>
-      </div>
+      </div> */}
     </main>
   )
 }
