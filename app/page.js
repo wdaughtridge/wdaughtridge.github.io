@@ -36,7 +36,7 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <p className="text-2xl pb-4"><i>Why</i> use <b>stradis</b>?</p>
         <p className="text-2xl">One API. Any service.</p>
-        <p className="text-md">Give your venue's website or app the power of ticket sales and distribution without the development costs.</p>
+        <p className="text-md">Give your venue&apos;s website or app the power of ticket sales and distribution without the development costs.</p>
         <p className="text-md">Enable your users to buy tickets directly from your site through a connected trusted ticket platform.</p>
         <p className="text-md">List your upcoming events from any platform directly on your site.</p>
         <p className="text-md">Pay-as-you-go pricing. Only pay for what you need.</p>
