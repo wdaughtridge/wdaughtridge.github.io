@@ -1,6 +1,7 @@
 'use client';
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 import { Divider, Input, FormControl, FormHelperText, Button } from '@mui/joy';
+import { Fade } from '@mui/material';
 import { useState } from 'react';
 
 export default function Home() {
@@ -8,19 +9,7 @@ export default function Home() {
     email: '',
     status: 'initial',
   });
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setData((current) => ({ ...current, status: 'loading' }));
-    try {
-      // Replace timeout with real backend operation
-      setTimeout(() => {
-        setData({ email: '', status: 'sent' });
-      }, 1500);
-    } catch (error) {
-      setData((current) => ({ ...current, status: 'failure' }));
-    }
-  };
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <main className="flex min-h-screen flex-col items-center p-24 bg-gradient-to-b from-green-400 to-blue-500 space-y-8">
@@ -51,9 +40,9 @@ export default function Home() {
         <p className="text-4xl pb-4"><b>Spread the love of music with <i>stradis</i>.</b></p>
       </div>
       <Divider />
-      {/* <div className="flex items-center space-x-2">
-        <p className="text-2xl self-center">Request a Demo</p>
-        <form onSubmit={handleSubmit} id="demo">
+      <div className="flex items-center space-x-2">
+        <p className="text-2xl self-center">Contact Us</p>
+        <form encType="text/plain" onSubmit={() => setSubmitted(true)} target="hidden_iframe" action='https://docs.google.com/forms/d/e/1FAIpQLSeNW5zpEKSOco6BdAzKpqu03X7dkliqNIn4BVLmFt9-bhQYcg/formResponse?' id="form">
           <FormControl>
             <Input
               sx={{ '--Input-decoratorChildHeight': '45px', border: '#fff !important' }}
@@ -61,6 +50,8 @@ export default function Home() {
               type="email"
               required
               value={data.email}
+              name='entry.1871230348'
+              id='entry.1871230348'
               onChange={(event) =>
                 setData({ email: event.target.value, status: 'initial' })
               }
@@ -78,30 +69,23 @@ export default function Home() {
                           backgroundColor: '#03ab4c !important',
                           color: '#fff',
                         }
-                     }}
+                    }}
                 >
                   Subscribe
                 </Button>
               }
             />
-            {data.status === 'failure' && (
-              <FormHelperText
-                sx={(theme) => ({ color: theme.vars.palette.danger[400] })}
-              >
-                Oops! something went wrong, please try again later.
-              </FormHelperText>
-            )}
-
-            {data.status === 'sent' && (
-              <FormHelperText
-                sx={(theme) => ({ color: theme.vars.palette.primary[400] })}
-              >
-                You are all set!
-              </FormHelperText>
-            )}
           </FormControl>
         </form>
-      </div> */}
+      </div>
+      {submitted && (
+        <FormHelperText
+          sx={{color: "#fff" }}
+        >
+          Your email has been sent!!
+        </FormHelperText>
+      )}
+      <iframe name="hidden_iframe" id="hidden_iframe" style={{display: 'none'}} onLoad={() => {if(submitted) {}}}></iframe>
     </main>
   )
 }
